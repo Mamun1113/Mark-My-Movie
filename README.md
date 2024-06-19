@@ -18,16 +18,19 @@ Explore Screen             |Wishlist Screen             |Watched Screen         
 ### 2. Wishlist
 - **List View:** Displays movies added to the wishlist.
 - **Details:** Shows movie posters, titles, types, years and IMDb IDs.
+- **Action Buttons:** Users can mark them as watched or add them to favorites.
 - **Remove Option:** Users can remove movies from the wishlist.
 
 ### 3. Watched Movies
 - **List View:** Displays movies marked as watched.
 - **Details:** Shows movie posters, titles, types, years and IMDb IDs.
+- **Action Buttons:** Users can add movies to wishlists or add them to favorites.
 - **Remove Option:** Users can remove movies from the watched list.
 
 ### 4. Favorite Movies
 - **List View:** Displays favorite movies.
 - **Details:** Shows movie posters, titles, types, years and IMDb IDs.
+- **Action Buttons:** Users can add movies to wishlists or mark them as watched.
 - **Remove Option:** Users can remove movies from the favorites list.
 
 ## UI Design
