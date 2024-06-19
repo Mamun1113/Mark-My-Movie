@@ -20,9 +20,8 @@ class WatchedScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    // Image with fixed height and width
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.network(
@@ -33,12 +32,10 @@ class WatchedScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 15),
-                    // Expanded column for text
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          // Title
                           Text(
                             movie.title,
                             style: TextStyle(
@@ -48,7 +45,6 @@ class WatchedScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: 5),
-                          // Subtitle with type, year, and IMDb ID
                           Text(
                             "${movie.type} | ${movie.year} | ${movie.imdbID}",
                             style: TextStyle(
@@ -59,12 +55,35 @@ class WatchedScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    // Delete button
-                    IconButton(
-                      icon: Icon(Icons.delete, color: Colors.red[500]),
-                      onPressed: () {
-                        movieProvider.removeWatched(movie);
-                      },
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        IconButton(
+                          icon: Icon(
+                            Icons.list,
+                            color:
+                                movie.isWishlist ? Colors.green : Colors.grey,
+                          ),
+                          onPressed: () {
+                            movieProvider.toggleWishlist(movie);
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            Icons.favorite,
+                            color: movie.isFavorite ? Colors.red : Colors.grey,
+                          ),
+                          onPressed: () {
+                            movieProvider.toggleFavorite(movie);
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.delete, color: Colors.black),
+                          onPressed: () {
+                            movieProvider.toggleWatched(movie);
+                          },
+                        ),
+                      ],
                     ),
                   ],
                 ),

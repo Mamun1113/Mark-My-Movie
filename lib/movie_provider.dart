@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
@@ -56,32 +55,14 @@ class MovieProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeFavorite(Movie movie) {
-    movie.isFavorite = false;
-    _favorite.remove(movie);
-    saveMovies();
-    notifyListeners();
-  }
-
-  void removeWatched(Movie movie) {
-    movie.isWatched = false;
-    _watched.remove(movie);
-    saveMovies();
-    notifyListeners();
-  }
-
-  void removeWishlist(Movie movie) {
-    movie.isWishlist = false;
-    _wishlist.remove(movie);
-    saveMovies();
-    notifyListeners();
-  }
-
   void saveMovies() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('wishlist', jsonEncode(_wishlist.map((movie) => movie.toJson()).toList()));
-    prefs.setString('watched', jsonEncode(_watched.map((movie) => movie.toJson()).toList()));
-    prefs.setString('favorite', jsonEncode(_favorite.map((movie) => movie.toJson()).toList()));
+    prefs.setString('wishlist',
+        jsonEncode(_wishlist.map((movie) => movie.toJson()).toList()));
+    prefs.setString('watched',
+        jsonEncode(_watched.map((movie) => movie.toJson()).toList()));
+    prefs.setString('favorite',
+        jsonEncode(_favorite.map((movie) => movie.toJson()).toList()));
   }
 
   void loadMovies() async {
@@ -92,13 +73,19 @@ class MovieProvider extends ChangeNotifier {
     String? favoriteString = prefs.getString('favorite');
 
     if (wishlistString != null && wishlistString.isNotEmpty) {
-      _wishlist = (jsonDecode(wishlistString) as List).map((data) => Movie.fromJson(data)).toList();
+      _wishlist = (jsonDecode(wishlistString) as List)
+          .map((data) => Movie.fromJson(data))
+          .toList();
     }
     if (watchedString != null && watchedString.isNotEmpty) {
-      _watched = (jsonDecode(watchedString) as List).map((data) => Movie.fromJson(data)).toList();
+      _watched = (jsonDecode(watchedString) as List)
+          .map((data) => Movie.fromJson(data))
+          .toList();
     }
     if (favoriteString != null && favoriteString.isNotEmpty) {
-      _favorite = (jsonDecode(favoriteString) as List).map((data) => Movie.fromJson(data)).toList();
+      _favorite = (jsonDecode(favoriteString) as List)
+          .map((data) => Movie.fromJson(data))
+          .toList();
     }
 
     notifyListeners();
@@ -109,8 +96,7 @@ class MovieProvider extends ChangeNotifier {
     _searchQuery = query;
     OmdbService _omdbService = OmdbService();
     List<Movie> results = await _omdbService.searchMovies(query);
-    
-    // Sync the search results with the existing lists
+
     results = results.map((searchResult) {
       final existingMovie = _wishlist.firstWhere(
         (movie) => movie.title == searchResult.title,
@@ -124,7 +110,7 @@ class MovieProvider extends ChangeNotifier {
       );
       return existingMovie;
     }).toList();
-    
+
     _searchResults = results;
     notifyListeners();
   }

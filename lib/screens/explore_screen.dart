@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:mark_my_movie/movie_provider.dart';
@@ -54,8 +53,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 8.0,
                     mainAxisSpacing: 8.0,
-                    childAspectRatio:
-                        0.63, // Adjust the aspect ratio to better fit the content
+                    childAspectRatio: 0.63,
                   ),
                   itemCount: provider.searchResults.length,
                   itemBuilder: (context, index) {

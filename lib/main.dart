@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.0), // height of the appbar
+        preferredSize: Size.fromHeight(100.0),
         child: ClipPath(
           clipper: CustomAppBarClipper(),
           child: Container(
@@ -78,16 +78,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Text(
-                    'Version: 1.0', // 'New Text' to display
+                    'Version: 1.0',
                     style: TextStyle(
                       fontSize: 16.0,
-                      color: Colors.blueGrey[200], // Customize the color as needed
+                      color: Colors.blueGrey[200],
                     ),
                   ),
                 ],
               ),
-              backgroundColor: Colors.transparent, // Make the AppBar background transparent to show the gradient
-              elevation: 0, // Remove the default AppBar shadow
+              backgroundColor: Colors.transparent,
+              elevation: 0,
             ),
           ),
         ),
@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex: _selectedIndex,
             selectedItemColor: Colors.teal,
             unselectedItemColor: Colors.blueGrey,
-            backgroundColor: Colors.transparent, // Make the background transparent to show the gradient
+            backgroundColor: Colors.transparent,
             onTap: _onItemTapped,
           ),
         ),
@@ -138,7 +138,8 @@ class CustomAppBarClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     Path path = Path();
     path.lineTo(0, size.height - 30);
-    path.quadraticBezierTo(size.width / 2, size.height, size.width, size.height - 30);
+    path.quadraticBezierTo(
+        size.width / 2, size.height, size.width, size.height - 30);
     path.lineTo(size.width, 0);
     path.close();
     return path;
