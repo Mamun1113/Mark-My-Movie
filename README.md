@@ -4,7 +4,8 @@ Mark My Movie is a Flutter-based mobile application that allows users to explore
 
 Explore Screen             |Wishlist Screen             |Watched Screen             |Favorite Screen             |
 :-------------------------:|:--------------------------:|:-------------------------:|:--------------------------:|
-![Screenshot_1718816733](https://github.com/Mamun1113/Mark-My-Movie/assets/66373332/751b1f01-a876-425d-a818-d44b447e4a73) | ![Screenshot_1718816746](https://github.com/Mamun1113/Mark-My-Movie/assets/66373332/6e7ef949-b0b6-48f4-aa25-f32ea6d50e70) | ![Screenshot_1718816748](https://github.com/Mamun1113/Mark-My-Movie/assets/66373332/5ffadaef-e766-43f1-b42c-123f43b4db28) | ![Screenshot_1718816751](https://github.com/Mamun1113/Mark-My-Movie/assets/66373332/48a8cae4-c56a-40fb-897f-43440dd713d9)
+![Screenshot_1718822030](https://github.com/Mamun1113/Mark-My-Movie/assets/66373332/af72add8-be76-49c9-a73a-f96757fce603) | ![Screenshot_1718822042](https://github.com/Mamun1113/Mark-My-Movie/assets/66373332/fcbe215d-cc60-420b-b211-719d95738269) | ![Screenshot_1718822045](https://github.com/Mamun1113/Mark-My-Movie/assets/66373332/51bbc256-a5ca-45a1-b1d2-e4321aa50fae) | ![Screenshot_1718822048](https://github.com/Mamun1113/Mark-My-Movie/assets/66373332/4f9b3c27-f7d1-4922-913e-8a830a46ae97)
+
 
 
 ## Features
