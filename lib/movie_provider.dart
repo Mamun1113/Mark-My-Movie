@@ -25,9 +25,11 @@ class MovieProvider extends ChangeNotifier {
   void toggleWishlist(Movie movie) {
     movie.isWishlist = !movie.isWishlist;
     if (movie.isWishlist) {
-      _wishlist.add(movie);
+      if (!_wishlist.contains(movie)) {
+        _wishlist.add(movie);
+      }
     } else {
-      _wishlist.remove(movie);
+      _wishlist.removeWhere((m) => m.imdbID == movie.imdbID);
     }
     saveMovies();
     notifyListeners();
@@ -36,9 +38,11 @@ class MovieProvider extends ChangeNotifier {
   void toggleWatched(Movie movie) {
     movie.isWatched = !movie.isWatched;
     if (movie.isWatched) {
-      _watched.add(movie);
+      if (!_watched.contains(movie)) {
+        _watched.add(movie);
+      }
     } else {
-      _watched.remove(movie);
+      _watched.removeWhere((m) => m.imdbID == movie.imdbID);
     }
     saveMovies();
     notifyListeners();
@@ -47,9 +51,11 @@ class MovieProvider extends ChangeNotifier {
   void toggleFavorite(Movie movie) {
     movie.isFavorite = !movie.isFavorite;
     if (movie.isFavorite) {
-      _favorite.add(movie);
+      if (!_favorite.contains(movie)) {
+        _favorite.add(movie);
+      }
     } else {
-      _favorite.remove(movie);
+      _favorite.removeWhere((m) => m.imdbID == movie.imdbID);
     }
     saveMovies();
     notifyListeners();
