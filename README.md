@@ -101,6 +101,10 @@ Mark My Movie is a Flutter-based mobile application that allows users to explore
    ```bash
    flutter run
    ```
+5. **Create android APK:**
+   ```bash
+   flutter build apk
+   ```
 
 ### Dependencies
 
