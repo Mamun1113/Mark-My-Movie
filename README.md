@@ -1,4 +1,5 @@
 # Mark My Movie
+**Download APK (https://mark-my-movie.uptodown.com/android)**
 
 Mark My Movie is a Flutter-based mobile application that allows users to explore, search and manage their favorite movies. The app provides functionalities to add movies to wishlists, mark them as watched and add them to favorites.
 
